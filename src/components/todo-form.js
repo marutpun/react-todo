@@ -3,7 +3,7 @@ import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ADD_TODO } from '../action-types';
-import TodoContext from '../contexts/todo-context';
+import { TodoContextDispatch } from '../contexts/todo-context';
 
 const useStyles = makeStyles({
 	btn: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 function TodoForm() {
 	const [input, setInput] = useState('');
-	const { dispatchTodos } = useContext(TodoContext);
+	const dispatchTodos = useContext(TodoContextDispatch);
 
 	const classes = useStyles();
 

@@ -1,5 +1,4 @@
 import { createContext } from 'react';
 
-const TodoContext = createContext(null);
-
-export default TodoContext;
+export const TodoContextState = createContext(null);
+export const TodoContextDispatch = createContext(null);
