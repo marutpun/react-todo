@@ -12,11 +12,12 @@ import {
 } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
 
-import TodoContext from '../contexts/todo-context';
+import { TodoContextState, TodoContextDispatch } from '../contexts/todo-context';
 import { DELETE_TODO, MARK_TODO, UNMARK_TODO } from '../action-types';
 
 function TodoList() {
-	const { todos, dispatchTodos } = useContext(TodoContext);
+	const todos = useContext(TodoContextState);
+	const dispatchTodos = useContext(TodoContextDispatch);
 
 	const _handleChangeCheckbox = (todo) => {
 		dispatchTodos({
